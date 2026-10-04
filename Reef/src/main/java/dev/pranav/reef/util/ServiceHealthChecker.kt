@@ -20,6 +20,6 @@ object ServiceHealthChecker {
     }
 
     fun isServiceDesynced(context: Context): Boolean {
-        return isAccessibilitySettingEnabled(context) && !BlockerService.isConnected
+        return !BlockerService.isConnected && isAccessibilitySettingEnabled(context)
     }
 }
